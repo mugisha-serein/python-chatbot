@@ -67,7 +67,7 @@ python-chatbot/
 <ol>
   <li>Clone repository:
     <pre>git clone &lt;your-repo-url&gt;
-         cd python-chatbot</pre>
+  cd python-chatbot</pre>
   </li>
   <li>Run the chatbot:
     <pre>python gui.py</pre>
