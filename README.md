@@ -1,176 +1,132 @@
-Python Chatbot
+<h1 align="center">Python Chatbot</h1>
 
-A simple, modular, and extensible chatbot built with pure Python, Tkinter GUI, and a keyword-based intent system. Designed for learning, rapid development, and easy expansion.
+<p align="center">
+A modular and extensible chatbot built with <strong>pure Python</strong>, <strong>Tkinter GUI</strong>, and a <strong>keyword-based intent system</strong>.
+</p>
 
-Table of Contents
+<hr>
 
-Features
+<h2>Table of Contents</h2>
+<ul>
+  <li><a href="#features">Features</a></li>
+  <li><a href="#architecture">Architecture</a></li>
+  <li><a href="#project-structure">Project Structure</a></li>
+  <li><a href="#setup--installation">Setup & Installation</a></li>
+  <li><a href="#usage">Usage</a></li>
+  <li><a href="#how-it-works">How it Works</a></li>
+  <li><a href="#future-updates--expansion">Future Updates & Expansion</a></li>
+  <li><a href="#contributing">Contributing</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
 
-Architecture
+<hr>
 
-Project Structure
+<h2 id="features">Features</h2>
+<ul>
+  <li>Lightweight Python chatbot using <strong>pure Python</strong> (no frameworks required)</li>
+  <li><strong>Tkinter GUI</strong> with scrollable chat history</li>
+  <li>User messages displayed on <span style="color:blue;">right</span>, bot responses on <span style="color:green;">left</span></li>
+  <li>Keyword-based intent matching (first match)</li>
+  <li>Modular design: <code>knowledge.py</code>, <code>engine.py</code>, <code>gui.py</code></li>
+  <li>Fallback responses for unknown input</li>
+  <li>Easily extensible for new intents or AI integration</li>
+</ul>
 
-Setup & Installation
+<hr>
 
-Usage
+<h2 id="architecture">Architecture</h2>
 
-How it Works
-
-Future Updates & Expansion
-
-Contributing
-
-License
-
-Features
-
-Lightweight Python chatbot using pure Python (no frameworks required).
-
-Tkinter GUI with scrollable chat history.
-
-User messages on the right, bot responses on the left.
-
-Keyword-based intent matching (first match).
-
-Modular design:
-
-knowledge.py → chatbot “brain” (intent database)
-
-engine.py → message processing and response logic
-
-gui.py → user interface
-
-Fallback responses for unknown input.
-
-Easily extensible to support new intents, NLP, or ML engines.
-
-Architecture
+<pre>
 User Input → [GUI] → [Engine] → [Knowledge Base] → Response → [GUI Display]
+</pre>
 
-Components:
+<h3>Components:</h3>
+<ul>
+  <li><strong>GUI (gui.py)</strong>: Handles user input and display using Tkinter.</li>
+  <li><strong>Engine (engine.py)</strong>: Cleans message, detects intent, selects response.</li>
+  <li><strong>Knowledge Base (knowledge.py)</strong>: Dictionary of intents, keywords, and responses.</li>
+</ul>
 
-GUI (gui.py)
+<hr>
 
-Handles user input, display of messages, and layout.
+<h2 id="project-structure">Project Structure</h2>
 
-Modern chat-like interface using Tkinter and ScrolledText.
-
-Engine (engine.py)
-
-Cleans user input.
-
-Detects intent using first matched keyword strategy.
-
-Selects random response from intent.
-
-Returns fallback response if no intent matches.
-
-Knowledge Base (knowledge.py)
-
-Stores intents as a dictionary.
-
-Each intent has:
-
-keywords: list of triggers
-
-responses: list of possible replies
-
-Includes "unknown" intent for fallback.
-
-Project Structure
+<pre>
 python-chatbot/
 │
 ├─ gui.py               # Tkinter GUI
 ├─ engine.py            # Chatbot logic and intent matching
 ├─ knowledge.py         # Intent database
 └─ README.md            # Project documentation
-Setup & Installation
+</pre>
 
-Clone repository:
+<hr>
 
-git clone <your-repo-url>
-cd python-chatbot
+<h2 id="setup--installation">Setup & Installation</h2>
 
-Install dependencies:
+<ol>
+  <li>Clone repository:
+    <pre>git clone &lt;your-repo-url&gt;
+         cd python-chatbot</pre>
+  </li>
+  <li>Run the chatbot:
+    <pre>python gui.py</pre>
+  </li>
+</ol>
 
-pip install -r requirements.txt
+<p><em>Note:</em> Tkinter comes pre-installed in most Python distributions. For Docker, see Dockerfile instructions.</p>
 
-Note: Tkinter comes with most Python installations. For Docker, see Dockerfile instructions.
+<hr>
 
-Run the chatbot:
+<h2 id="usage">Usage</h2>
 
-python gui.py
-Usage
+<ol>
+  <li>Type a message in the input box.</li>
+  <li>Press <strong>Enter</strong> or click <strong>Send</strong>.</li>
+  <li>Bot will display a response in the scrollable chat area.</li>
+</ol>
 
-Type a message in the input box.
+<hr>
 
-Press Enter or click Send.
+<h2 id="how-it-works">How it Works</h2>
 
-Chatbot will display responses in the scrollable chat area.
+<ol>
+  <li>GUI captures user input using Tkinter.</li>
+  <li>Engine calls <code>clean_message()</code> to normalize text.</li>
+  <li><code>detect_intent()</code> scans all intents (except <code>"unknown"</code>) for the first keyword match.</li>
+  <li>If no match → fallback <code>"unknown"</code> intent.</li>
+  <li><code>select_response()</code> picks a random response from the intent.</li>
+  <li>Response is displayed in the chat GUI.</li>
+</ol>
 
-Example messages:
+<p><strong>Note:</strong> Currently uses first-matched keyword logic for simplicity and predictability.</p>
 
-User Input	Bot Response Example
-"hi"	"Hello! How can I assist you today?"
-"thank you"	"You're welcome!"
-"bye"	"Goodbye!"
-"I need help"	"I can answer simple questions and have basic conversations..."
-"random text"	"I'm not sure I understand. Can you rephrase that?"
-How it Works
+<hr>
 
-User input is captured by Tkinter.
+<h2 id="future-updates--expansion">Future Updates & Expansion</h2>
 
-Engine calls clean_message() to normalize text.
+<ul>
+  <li>Add more intents: <em>time, date, jokes, weather, etc.</em></li>
+  <li>Advanced NLP integration (machine learning, transformer models)</li>
+  <li>Context awareness for multi-turn conversation</li>
+  <li>Persistent knowledge: conversation history and user preferences</li>
+  <li>GUI improvements: chat bubble colors, animations, left/right alignment, responsive resizing</li>
+  <li>Docker improvements: GUI support in Linux containers, headless mode for testing</li>
+</ul>
 
-detect_intent() loops through all intents except "unknown":
+<hr>
 
-If a keyword matches first occurrence, returns that intent.
+<h2 id="contributing">Contributing</h2>
 
-If no match → "unknown" intent.
+<ul>
+  <li>Fork the repository</li>
+  <li>Add new intents to <code>knowledge.py</code></li>
+  <li>Extend <code>engine.py</code> for new logic</li>
+  <li>Update GUI in <code>gui.py</code> if needed</li>
+  <li>Submit a pull request</li>
+</ul>
 
-select_response() picks a random response for the detected intent.
+<hr>
 
-Bot response is displayed in the chat GUI.
-
-Note: The chatbot currently uses first matched keyword logic. This makes it simple, predictable, and easy to expand.
-
-Future Updates & Expansion
-
-Planned enhancements:
-
-Add more intents: e.g., time, date, jokes, weather.
-
-Advanced NLP: integrate simple machine learning or transformer models.
-
-Context awareness: allow multi-turn conversation.
-
-Persistent knowledge: save conversation history or user preferences.
-
-GUI improvements:
-
-User chat aligned to right, bot chat aligned to left
-
-Modern color scheme and animations
-
-Responsive resizing and scrollable history
-
-Docker improvements:
-
-GUI support in Linux containers
-
-Headless mode for testing
-
-Contributing
-
-Fork the repository
-
-Add new intents to knowledge.py
-
-Extend engine.py for new logic
-
-Update GUI in gui.py if needed
-
-Submit pull request
-
-License
-You are free to use, modify, and distribute for personal or educational purposes.
+<h2 id="license">License</h2>
+<p>MIT License — free to use, modify, and distribute for personal or educational purposes.</p>
