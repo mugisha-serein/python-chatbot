@@ -111,7 +111,7 @@ python-chatbot/
   <li>Live weather via an external API</li>
   <li>Advanced NLP integration (machine learning, transformer models)</li>
   <li>Context awareness for multi-turn conversation</li>
-  <li>Persistent knowledge: conversation history and user preferences</li>
+  <li>Persistent knowledge: user preferences</li>
   <li>GUI improvements: chat bubble colors, animations, left/right alignment, responsive resizing</li>
   <li>Optional packaging and distribution setup</li>
 </ul>
