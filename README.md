@@ -129,8 +129,4 @@ python-chatbot/
 <hr>
 
 <h2 id="license">License</h2>
-<<<<<<< HEAD
-<p>feel  free to use, modify, and distribute for personal or educational purposes.</p>
-=======
 <p>feel free to use, modify, and distribute for personal or educational purposes.</p>
->>>>>>> 4e32f110893c985351cde7210ce9c9cbd24120f0
