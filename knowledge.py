@@ -36,6 +36,40 @@ INTENTS = {
             "I'm still a simple chatbot, but I'll do my best to assist you!"
         ],
     },
+
+    "time": {
+        "keywords": ["time", "current time", "what time is it"],
+        "responses": [
+            "Checking the time..."
+        ],
+    },
+
+    "date": {
+        "keywords": ["date", "today's date", "what date is it"],
+        "responses": [
+            "Checking today's date..."
+        ],
+    },
+
+    "joke": {
+        "keywords": ["joke", "make me laugh", "funny"],
+        "responses": [
+            "Why do programmers prefer dark mode? Because light attracts bugs.",
+            "I told my computer I needed a break, and it said: 'No problem, I'll go to sleep.'",
+            "Why was the developer unhappy at their job? They wanted arrays.",
+            "I would tell you a UDP joke, but you might not get it."
+        ],
+    },
+
+    "weather": {
+        "keywords": ["weather", "forecast", "temperature"],
+        "responses": [
+            "I can't access live weather yet. Tell me your city and I can offer general tips.",
+            "I don't have live weather data right now, but I can help you think through what to wear."
+        ],
+    },
+    
+    
     
     "unknown": {
         "responses": [

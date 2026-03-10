@@ -25,10 +25,11 @@ A modular and extensible chatbot built with <strong>pure Python</strong>, <stron
 <ul>
   <li>Lightweight Python chatbot using <strong>pure Python</strong> (no frameworks required)</li>
   <li><strong>Tkinter GUI</strong> with scrollable chat history</li>
-  <li>User messages displayed on <span style="color:blue;">right</span>, bot responses on <span style="color:green;">left</span></li>
+  <li>User and bot messages displayed with simple <code>You:</code> / <code>Bot:</code> prefixes</li>
   <li>Keyword-based intent matching (first match)</li>
   <li>Modular design: <code>knowledge.py</code>, <code>engine.py</code>, <code>gui.py</code></li>
   <li>Fallback responses for unknown input</li>
+  <li>Built-in intents for time, date, jokes, and basic weather help (non-live)</li>
   <li>Easily extensible for new intents or AI integration</li>
 </ul>
 
@@ -37,7 +38,7 @@ A modular and extensible chatbot built with <strong>pure Python</strong>, <stron
 <h2 id="architecture">Architecture</h2>
 
 <pre>
-User Input → [GUI] → [Engine] → [Knowledge Base] → Response → [GUI Display]
+User Input -> [GUI] -> [Engine] -> [Knowledge Base] -> Response -> [GUI Display]
 </pre>
 
 <h3>Components:</h3>
@@ -53,11 +54,11 @@ User Input → [GUI] → [Engine] → [Knowledge Base] → Response → [GUI Dis
 
 <pre>
 python-chatbot/
-│
-├─ gui.py               # Tkinter GUI
-├─ engine.py            # Chatbot logic and intent matching
-├─ knowledge.py         # Intent database
-└─ README.md            # Project documentation
+|
++-- gui.py               # Tkinter GUI
++-- engine.py            # Chatbot logic and intent matching
++-- knowledge.py         # Intent database
++-- README.md            # Project documentation
 </pre>
 
 <hr>
@@ -74,7 +75,7 @@ python-chatbot/
   </li>
 </ol>
 
-<p><em>Note:</em> Tkinter comes pre-installed in most Python distributions. For Docker, see Dockerfile instructions.</p>
+<p><em>Note:</em> Tkinter comes pre-installed in most Python distributions.</p>
 
 <hr>
 
@@ -94,7 +95,7 @@ python-chatbot/
   <li>GUI captures user input using Tkinter.</li>
   <li>Engine calls <code>clean_message()</code> to normalize text.</li>
   <li><code>detect_intent()</code> scans all intents (except <code>"unknown"</code>) for the first keyword match.</li>
-  <li>If no match → fallback <code>"unknown"</code> intent.</li>
+  <li>If no match -> fallback <code>"unknown"</code> intent.</li>
   <li><code>select_response()</code> picks a random response from the intent.</li>
   <li>Response is displayed in the chat GUI.</li>
 </ol>
@@ -106,12 +107,13 @@ python-chatbot/
 <h2 id="future-updates--expansion">Future Updates & Expansion</h2>
 
 <ul>
-  <li>Add more intents: <em>time, date, jokes, weather, etc.</em></li>
+  <li>Add more intents beyond the basics (facts, reminders, small talk, etc.)</li>
+  <li>Live weather via an external API</li>
   <li>Advanced NLP integration (machine learning, transformer models)</li>
   <li>Context awareness for multi-turn conversation</li>
   <li>Persistent knowledge: conversation history and user preferences</li>
   <li>GUI improvements: chat bubble colors, animations, left/right alignment, responsive resizing</li>
-  <li>Docker improvements: GUI support in Linux containers, headless mode for testing</li>
+  <li>Optional packaging and distribution setup</li>
 </ul>
 
 <hr>
@@ -130,3 +132,4 @@ python-chatbot/
 
 <h2 id="license">License</h2>
 <p>feel free to use, modify, and distribute for personal or educational purposes.</p>
+

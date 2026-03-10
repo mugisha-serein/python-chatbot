@@ -1,4 +1,5 @@
 import random
+from datetime import datetime
 import knowledge
 
 
@@ -34,5 +35,12 @@ def get_response(message):
     """
     cleaned = clean_message(message)
     intent = detect_intent(cleaned)
+    if intent == "time":
+        now = datetime.now()
+        return now.strftime("Current time is %I:%M %p.")
+    if intent == "date":
+        today = datetime.now()
+        return today.strftime("Today's date is %B %d, %Y.")
+
     response = select_response(intent)
     return response
