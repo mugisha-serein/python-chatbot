@@ -67,7 +67,7 @@ python-chatbot/
 <ol>
   <li>Clone repository:
     <pre>git clone &lt;your-repo-url&gt;
-         cd python-chatbot</pre>
+  cd python-chatbot</pre>
   </li>
   <li>Run the chatbot:
     <pre>python gui.py</pre>
@@ -129,4 +129,8 @@ python-chatbot/
 <hr>
 
 <h2 id="license">License</h2>
+<<<<<<< HEAD
 <p>feel  free to use, modify, and distribute for personal or educational purposes.</p>
+=======
+<p>feel free to use, modify, and distribute for personal or educational purposes.</p>
+>>>>>>> 4e32f110893c985351cde7210ce9c9cbd24120f0
