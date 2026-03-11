@@ -1,3 +1,21 @@
+INTENT_PRIORITY = [
+    "time",
+    "date",
+    "reminder",
+    "fact",
+    "joke",
+    "weather",
+    "capabilities",
+    "identity",
+    "creator",
+    "smalltalk_howareyou",
+    "smalltalk_mood",
+    "help",
+    "thanks",
+    "goodbye",
+    "greeting",
+]
+
 INTENTS = {
     "greeting": {
         "keywords": ["hi", "hello", "hey"],

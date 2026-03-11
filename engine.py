@@ -9,10 +9,22 @@ def clean_message(message):
 
 
 def detect_intent(message):
-    for intent_name, intent_data in knowledge.INTENTS.items():
-        if intent_name == "unknown":
-            continue
-        
+    intent_order = getattr(knowledge, "INTENT_PRIORITY", [])
+    ordered_intents = []
+    seen = set()
+
+    for intent_name in intent_order:
+        if intent_name in knowledge.INTENTS and intent_name != "unknown" and intent_name not in seen:
+            ordered_intents.append(intent_name)
+            seen.add(intent_name)
+
+    for intent_name in knowledge.INTENTS.keys():
+        if intent_name != "unknown" and intent_name not in seen:
+            ordered_intents.append(intent_name)
+            seen.add(intent_name)
+
+    for intent_name in ordered_intents:
+        intent_data = knowledge.INTENTS[intent_name]
         keywords = intent_data.get("keywords", [])
         for keyword in keywords:
             if keyword in message:
