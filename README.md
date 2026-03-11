@@ -29,8 +29,9 @@ A modular and extensible chatbot built with <strong>pure Python</strong>, <stron
   <li>Keyword-based intent matching (first match)</li>
   <li>Modular design: <code>knowledge.py</code>, <code>engine.py</code>, <code>gui.py</code></li>
   <li>Fallback responses for unknown input</li>
-  <li>Built-in intents for time, date, jokes, and basic weather help (non-live)</li>
+  <li>Built-in intents for time, date, jokes, weather tips, facts, reminders, and small talk</li>
   <li>Easily extensible for new intents or AI integration</li>
+  <li>Intent reference in <code>documentation.md</code></li>
 </ul>
 
 <hr>
@@ -59,6 +60,7 @@ python-chatbot/
 +-- engine.py            # Chatbot logic and intent matching
 +-- knowledge.py         # Intent database
 +-- README.md            # Project documentation
++-- documentation.md     # Intent catalog and extension notes
 </pre>
 
 <hr>
@@ -107,7 +109,6 @@ python-chatbot/
 <h2 id="future-updates--expansion">Future Updates & Expansion</h2>
 
 <ul>
-  <li>Add more intents beyond the basics (facts, reminders, small talk, etc.)</li>
   <li>Live weather via an external API</li>
   <li>Advanced NLP integration (machine learning, transformer models)</li>
   <li>Context awareness for multi-turn conversation</li>
