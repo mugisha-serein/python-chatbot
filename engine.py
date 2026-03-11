@@ -1,6 +1,7 @@
 import random
 from datetime import datetime
 import knowledge
+import preferences
 
 
 def clean_message(message):
@@ -46,6 +47,10 @@ def get_response(message):
     The main function called by GUI.
     """
     cleaned = clean_message(message)
+    preference_response = preferences.handle_message(cleaned)
+    if preference_response:
+        return preference_response
+
     intent = detect_intent(cleaned)
     if intent == "time":
         now = datetime.now()
