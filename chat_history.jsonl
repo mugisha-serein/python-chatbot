@@ -20,3 +20,9 @@
 {"ts": "2026-03-11T08:56:40", "role": "bot", "message": "A day on Venus is longer than its year."}
 {"ts": "2026-03-11T08:56:49", "role": "user", "message": "joke"}
 {"ts": "2026-03-11T08:56:49", "role": "bot", "message": "Why was the developer unhappy at their job? They wanted arrays."}
+{"ts": "2026-03-11T09:12:54", "role": "user", "message": "what can you do"}
+{"ts": "2026-03-11T09:12:54", "role": "bot", "message": "I can do simple conversations, quick facts, and lightweight help. Ask me something!"}
+{"ts": "2026-03-11T09:13:07", "role": "user", "message": "who created you"}
+{"ts": "2026-03-11T09:13:07", "role": "bot", "message": "A developer put me together as a lightweight Python chatbot."}
+{"ts": "2026-03-11T09:13:21", "role": "user", "message": "time"}
+{"ts": "2026-03-11T09:13:21", "role": "bot", "message": "Current time is 09:13 AM."}
