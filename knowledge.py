@@ -37,6 +37,71 @@ INTENTS = {
         ],
     },
 
+    "capabilities": {
+        "keywords": ["what can you do", "your capabilities", "what are your features", "what do you do"],
+        "responses": [
+            "I can handle simple questions, small talk, facts, and basic reminders. Try asking for the time or a joke.",
+            "I support keyword-based intents like time, date, jokes, facts, and small talk.",
+            "I can do simple conversations, quick facts, and lightweight help. Ask me something!"
+        ],
+    },
+
+    "identity": {
+        "keywords": ["who are you", "what are you", "your name", "what's your name", "what is your name"],
+        "responses": [
+            "I'm a simple Python chatbot built around keyword intents.",
+            "I'm a lightweight chatbot demo written in Python.",
+            "I'm your friendly local chatbot, running on a small intent system."
+        ],
+    },
+
+    "creator": {
+        "keywords": ["who made you", "who created you", "your creator", "who built you"],
+        "responses": [
+            "I was built as a small Python chatbot project.",
+            "I'm a demo bot created by Mugisha Serein for learning and experimentation.",
+            "A developer put me together as a lightweight Python chatbot."
+        ],
+    },
+
+    "smalltalk_howareyou": {
+        "keywords": ["how are you", "how's it going", "how are things", "how do you do", "what's up"],
+        "responses": [
+            "I'm doing well, thanks! How are you?",
+            "All good on my end. How can I help?",
+            "Feeling helpful today. What can I do for you?"
+        ],
+    },
+
+    "smalltalk_mood": {
+        "keywords": ["i'm bored", "im bored", "i am bored", "i feel bored", "i'm tired", "im tired", "i am tired"],
+        "responses": [
+            "Want a quick joke or a fun fact to pass the time?",
+            "I can share a joke, a fact, or help you plan a small task.",
+            "I can help you find something quick to do. Want a fun fact?"
+        ],
+    },
+
+    "fact": {
+        "keywords": ["fact", "fun fact", "random fact", "tell me a fact"],
+        "responses": [
+            "Octopuses have three hearts.",
+            "A day on Venus is longer than its year.",
+            "Honey can stay edible for a very long time thanks to its low moisture and acidity.",
+            "Light from the Sun takes about 8 minutes to reach Earth.",
+            "There are 8 planets in our solar system."
+        ],
+    },
+
+    "reminder": {
+        "keywords": ["remind me", "set a reminder", "reminder"],
+        "responses": [
+            "I can't set reminders yet, but if you tell me the task and time, I can format it for you.",
+            "Reminders aren't supported yet. Want me to draft a checklist instead?",
+            "I don't have a reminder system yet, but I can help you plan what to do next."
+        ],
+    },
+
     "time": {
         "keywords": ["time", "current time", "what time is it"],
         "responses": [
