@@ -24,10 +24,11 @@ A modular and extensible chatbot built with <strong>pure Python</strong>, <stron
 <h2 id="features">Features</h2>
 <ul>
   <li>Lightweight Python chatbot using <strong>pure Python</strong> (no frameworks required)</li>
-  <li><strong>Tkinter GUI</strong> with scrollable chat history</li>
-  <li>User and bot messages displayed with simple <code>You:</code> / <code>Bot:</code> prefixes</li>
-  <li>Keyword-based intent matching (first match)</li>
-  <li>Modular design: <code>knowledge.py</code>, <code>engine.py</code>, <code>gui.py</code></li>
+  <li><strong>Tkinter GUI</strong> with chat bubbles, animation, and responsive layout</li>
+  <li>User and bot messages aligned left/right with distinct colors</li>
+  <li>Keyword-based intent matching with priority ordering</li>
+  <li>Persistent preferences (name, favorites, likes) stored locally</li>
+  <li>Modular design: <code>knowledge.py</code>, <code>engine.py</code>, <code>gui.py</code>, <code>preferences.py</code></li>
   <li>Fallback responses for unknown input</li>
   <li>Built-in intents for time, date, jokes, weather tips, facts, reminders, and small talk</li>
   <li>Easily extensible for new intents or AI integration</li>
@@ -59,8 +60,8 @@ python-chatbot/
 +-- gui.py               # Tkinter GUI
 +-- engine.py            # Chatbot logic and intent matching
 +-- knowledge.py         # Intent database
++-- preferences.py       # Persistent user preferences
 +-- README.md            # Project documentation
-+-- documentation.md     # Intent catalog and extension notes
 </pre>
 
 <hr>
@@ -96,13 +97,14 @@ python-chatbot/
 <ol>
   <li>GUI captures user input using Tkinter.</li>
   <li>Engine calls <code>clean_message()</code> to normalize text.</li>
-  <li><code>detect_intent()</code> scans all intents (except <code>"unknown"</code>) for the first keyword match.</li>
+  <li>Preferences are parsed first to capture things like names and favorites.</li>
+  <li><code>detect_intent()</code> scans intents in priority order (except <code>"unknown"</code>) for the first keyword match.</li>
   <li>If no match -> fallback <code>"unknown"</code> intent.</li>
   <li><code>select_response()</code> picks a random response from the intent.</li>
   <li>Response is displayed in the chat GUI.</li>
 </ol>
 
-<p><strong>Note:</strong> Currently uses first-matched keyword logic for simplicity and predictability.</p>
+<p><strong>Note:</strong> Uses priority-based matching to avoid collisions (e.g., <code>what can you do</code> vs <code>do</code>).</p>
 
 <hr>
 
@@ -112,7 +114,6 @@ python-chatbot/
   <li>Live weather via an external API</li>
   <li>Advanced NLP integration (machine learning, transformer models)</li>
   <li>Context awareness for multi-turn conversation</li>
-  <li>Persistent knowledge: user preferences</li>
   <li>Optional packaging and distribution setup</li>
 </ul>
 
