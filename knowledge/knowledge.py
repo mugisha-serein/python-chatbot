@@ -147,8 +147,8 @@ INTENTS = {
     "weather": {
         "keywords": ["weather", "forecast", "temperature"],
         "responses": [
-            "I can't access live weather yet. Tell me your city and I can offer general tips.",
-            "I don't have live weather data right now, but I can help you think through what to wear."
+            "Tell me the city or town you want the forecast for (e.g., \"weather in Kigali\").",
+            "Add a location after \"weather\" or \"forecast\" and I will pull live data for that place."
         ],
     },
     

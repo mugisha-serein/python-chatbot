@@ -66,8 +66,10 @@ def _summarize_preferences(prefs):
     return " ".join(parts).strip()
 
 
-def handle_message(message):
-    prefs = load_preferences()
+def handle_message(message, loader=None, saver=None):
+    loader = loader or load_preferences
+    saver = saver or save_preferences
+    prefs = loader()
 
     if re.search(r"\bwhat(?:'s| is) my name\b", message):
         name = prefs.get("name")
@@ -109,7 +111,7 @@ def handle_message(message):
     if name_match:
         name = _clean_value(name_match.group(1))
         prefs["name"] = name
-        save_preferences(prefs)
+        saver(prefs)
         return f"Got it. I'll remember your name is {name}."
 
     favorite_match = re.search(r"\bmy favou?rite ([a-z ]+?) is (.+)", message)
@@ -117,14 +119,14 @@ def handle_message(message):
         category = _normalize_list_value(favorite_match.group(1).strip())
         value = _clean_value(favorite_match.group(2))
         prefs.setdefault("favorites", {})[category] = value
-        save_preferences(prefs)
+        saver(prefs)
         return f"Got it. I'll remember your favorite {category} is {value}."
 
     favorite_match = re.search(r"\bmy favou?rite is (.+)", message)
     if favorite_match:
         value = _clean_value(favorite_match.group(1))
         prefs.setdefault("favorites", {})["general"] = value
-        save_preferences(prefs)
+        saver(prefs)
         return f"Got it. I'll remember your favorite is {value}."
 
     like_match = re.search(r"\bi (?:really )?(like|love|prefer) (.+)", message)
@@ -137,7 +139,7 @@ def handle_message(message):
         else:
             prefs.setdefault("likes", [])
             _add_unique(prefs["likes"], value)
-        save_preferences(prefs)
+        saver(prefs)
         return f"Thanks. I'll remember you {verb} {value}."
 
     return None

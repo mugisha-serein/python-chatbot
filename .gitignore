@@ -1,3 +1,50 @@
-/chat_history.jsonl
-/documentation.md
-/user_preferences.json
+# Private data
+chat_history.jsonl
+user_preferences.json
+documentation.md
+
+# Virtual environments
+.env
+.env.*
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+
+# Python bytecode
+__pycache__/
+*/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+
+# Build / packaging
+build/
+dist/
+pip-wheel-metadata/
+*.egg-info/
+.eggs/
+
+# Caches
+.pytest_cache/
+.mypy_cache/
+
+# IDE metadata
+.vscode/
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# Databases
+*.sqlite3
+*.db
+*.db-journal
+
+# OS files
+.DS_Store
+Thumbs.db
